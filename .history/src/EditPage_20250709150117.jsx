@@ -19,12 +19,12 @@ const EditPage = () => {
 
     if (foundItem) {
       setEdit([foundItem]);
-      setTitle(foundItem.title || '');
-      setPrice(foundItem.price || '');
-      setCategory(foundItem.category || '');
-      setDescription(foundItem.description || '');
-      setRating(foundItem.rating?.rate || '');
-      setReviewCount(foundItem.rating?.count || '');
+      // setTitle(foundItem.title || '');
+      // setPrice(foundItem.price || '');
+      // setCategory(foundItem.category || '');
+      // setDescription(foundItem.description || '');
+      // setRating(foundItem.rating?.rate || '');
+      // setReviewCount(foundItem.rating?.count || '');
     }
   }, [id]);
 
