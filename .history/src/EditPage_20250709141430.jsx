@@ -10,17 +10,17 @@ const EditPage = () => {
   const [description, setDescription] = useState('')
   const [edit, setEdit]=useState([]);
 
-  const {id}=useParams();
-  const navigate = useNavigate();
+    const {id}=useParams();
+    const navigate = useNavigate();
     
 
 
     useEffect (() => {
 
         const editValue = JSON.parse(localStorage.getItem('localValue'))
-        const foundItem = editValue.find(product => product.id == id)
-        setEdit(foundItem)
-        console.log(foundItem,"edit")
+        const filterEdit = editValue.find(product => product.id == id)
+        setEdit(filterEdit)
+        console.log(filterEdit,"edit")
     } , [id])
 
     const handleUpdate = (e) =>{

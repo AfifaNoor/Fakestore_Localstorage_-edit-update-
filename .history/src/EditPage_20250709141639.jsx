@@ -10,8 +10,8 @@ const EditPage = () => {
   const [description, setDescription] = useState('')
   const [edit, setEdit]=useState([]);
 
-  const {id}=useParams();
-  const navigate = useNavigate();
+    const {id}=useParams();
+    const navigate = useNavigate();
     
 
 

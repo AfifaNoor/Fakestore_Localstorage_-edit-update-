@@ -10,17 +10,17 @@ const EditPage = () => {
   const [description, setDescription] = useState('')
   const [edit, setEdit]=useState([]);
 
-  const {id}=useParams();
-  const navigate = useNavigate();
+    const {id}=useParams();
+    const navigate = useNavigate();
     
 
 
     useEffect (() => {
 
         const editValue = JSON.parse(localStorage.getItem('localValue'))
-        const foundItem = editValue.find(product => product.id == id)
-        setEdit(foundItem)
-        console.log(foundItem,"edit")
+        const filterEdit = editValue.filter(product => product.id == id)
+        setEdit(filterEdit)
+        console.log(filterEdit,"edit")
     } , [id])
 
     const handleUpdate = (e) =>{
@@ -35,9 +35,7 @@ const EditPage = () => {
       rating
     }
 
-    const updatedDetail = [...edit , newDetail];
-
-    setEdit(updatedDetail)
+    const 
 
 
 
@@ -52,13 +50,13 @@ const EditPage = () => {
           </div>
 
      <form className="right-container" >
-            <input className="input-field" type='text'  name='Title' value={item.title}  onChange={(e)=> setTitle(e.target.value)}/>
-            <input className="input-field" text='number' name='price'  value ={item.price} placeholder='$' onChange={(e)=> setprice(e.target.value)}/>
-            <input className="input-field" type='text'   name='category' value={item.category} onChange={(e)=> setCategory(e.target.value)} />
-            <input className="input-field"  type="text" name='Description' value={item.description} onChange={(e)=> setDescription(e.target.value)}></input>
-            <input className="input-field" type='text' name='Ratings ⭐' value={item.rating.rate} onChange={(e)=> setRating(e.target.value)}></input>
+            <input className="input-field" type='text'  name='Title' value={item.title} />
+            <input className="input-field" text='number' name='price'  value ={item.price} placeholder='$'/>
+            <input className="input-field" type='text'   name='category' value={item.category} />
+            <input className="input-field"  type="text" name='Description' value={item.description}></input>
+            <input className="input-field" type='text' name='Ratings ⭐' value={item.rating.rate}></input>
             <input className="input-field" type='text' name='Review' value={item.rating.count} ></input>
-            <button className="submit-btn" type='submit' onClick={handleUpdate}> Save</button>
+            <button className="submit-btn" type='submit'> Save</button>
             <button className="product-btn" onClick={() => navigate("/")}>Go Back</button>
           </form>
 
